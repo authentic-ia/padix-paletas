@@ -3,167 +3,274 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Padix Paletas | Venta de paletas de pádel en Yerba Buena</title>
-<meta name="description" content="Paletas de pádel para todos los niveles. Retiro en Yerba Buena, San Javier 2400.">
+<title>Padix Paletas | Paletas de pádel en Yerba Buena</title>
+<meta name="description" content="Paletas de pádel para todos los niveles. Asesoramiento personalizado en Yerba Buena, Tucumán.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--naranja:#ff6a00;--verde:#39ff14;--negro:#0d0d0d;--gris-osc:#1a1a1a;--gris:#2b2b2b;--gris-cl:#bdbdbd;--blanco:#fff}
-*{box-sizing:border-box;margin:0;padding:0}
+:root{--naranja:#ff6a00;--verde:#b6ff00;--negro:#0a0a0b;--g1:#141416;--g2:#1d1d21;--g3:#2a2a30;--g4:#8b8b95;--blanco:#f5f5f7}
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--negro);color:var(--blanco);line-height:1.6}
+body{font-family:'Inter',sans-serif;background:var(--negro);color:var(--blanco);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,.logo{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
 a{color:inherit;text-decoration:none}
-.contenedor{max-width:1100px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;background:rgba(13,13,13,.95);border-bottom:1px solid var(--gris);z-index:10}
-.barra{display:flex;align-items:center;justify-content:space-between;height:64px}
-.marca{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.3rem;letter-spacing:1px}
-.marca span{color:var(--naranja)}
-.marca b{color:var(--verde)}
-nav a{margin-left:20px;color:var(--gris-cl);font-size:.95rem}
-nav a:hover{color:var(--verde)}
-.hero{padding:80px 0 70px;text-align:center;background:radial-gradient(circle at 50% 0,#2a1500 0,var(--negro) 65%)}
-.hero h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.1;margin-bottom:18px}
-.hero h1 em{font-style:normal;color:var(--naranja)}
-.hero h1 strong{color:var(--verde)}
-.hero p{max-width:600px;margin:0 auto 30px;color:var(--gris-cl);font-size:1.1rem}
-.boton{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:700;border:2px solid var(--naranja);background:var(--naranja);color:var(--negro);transition:.2s}
-.boton:hover{background:transparent;color:var(--naranja)}
-.boton.verde{background:var(--verde);border-color:var(--verde)}
-.boton.verde:hover{background:transparent;color:var(--verde)}
-.boton.chico{padding:10px 20px;font-size:.9rem}
-section{padding:70px 0}
-h2{font-size:2rem;margin-bottom:10px}
-h2 i{font-style:normal;color:var(--verde)}
-.sub{color:var(--gris-cl);margin-bottom:36px}
-.grilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
-.tarjeta{background:var(--gris-osc);border:1px solid var(--gris);border-radius:18px;padding:22px;display:flex;flex-direction:column;transition:.2s}
-.tarjeta:hover{border-color:var(--naranja);transform:translateY(-4px)}
-.foto{height:170px;border-radius:12px;background:linear-gradient(135deg,var(--gris),var(--negro));display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.etiqueta{display:inline-block;align-self:flex-start;font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--verde);color:var(--negro);margin-bottom:10px}
-.etiqueta.n{background:var(--naranja)}
-.tarjeta h3{font-size:1.2rem;margin-bottom:6px}
-.tarjeta p{color:var(--gris-cl);font-size:.93rem;flex:1;margin-bottom:16px}
-.precio{font-weight:800;color:var(--naranja);margin-bottom:14px}
-.ventajas{background:var(--gris-osc);border-top:1px solid var(--gris);border-bottom:1px solid var(--gris)}
-.ventaja{text-align:center;padding:10px}
-.ventaja .num{font-size:2.4rem;font-weight:900;color:var(--verde)}
-.ventaja h3{margin:4px 0}
-.ventaja p{color:var(--gris-cl);font-size:.93rem}
-.pasos{counter-reset:p;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
-.paso{counter-increment:p;background:var(--gris-osc);border-radius:18px;padding:24px;border-left:5px solid var(--naranja)}
-.paso::before{content:counter(p);display:block;font-size:2rem;font-weight:900;color:var(--naranja)}
-.paso p{color:var(--gris-cl);font-size:.93rem}
-.contacto{text-align:center;background:linear-gradient(180deg,var(--negro),#1a0d00)}
-.contacto .datos{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:26px}
-footer{padding:26px 0;text-align:center;color:var(--gris-cl);font-size:.85rem;border-top:1px solid var(--gris)}
-@media(max-width:600px){nav a{margin-left:12px;font-size:.85rem}}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.grad{background:linear-gradient(90deg,var(--naranja),var(--verde));-webkit-background-clip:text;background-clip:text;color:transparent}
+/* Barra */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,11,.75);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-size:1.6rem;font-weight:700}
+.logo span{color:var(--verde)}
+.menu{display:flex;gap:30px;align-items:center;font-size:.92rem;color:var(--g4)}
+.menu a:hover{color:var(--blanco)}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:600;font-size:.95rem;transition:.25s;cursor:pointer;border:0}
+.btn-p{background:linear-gradient(90deg,var(--naranja),#ff9a00);color:#0a0a0b;box-shadow:0 8px 30px rgba(255,106,0,.35)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(255,106,0,.5)}
+.btn-s{border:1.5px solid var(--g3);color:var(--blanco);background:transparent}
+.btn-s:hover{border-color:var(--verde);color:var(--verde)}
+.menu .btn{padding:10px 22px;color:#0a0a0b}
+/* Hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:90px;overflow:hidden}
+.hero::before{content:"";position:absolute;width:720px;height:720px;right:-180px;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(255,106,0,.35),transparent 65%);filter:blur(30px)}
+.hero::after{content:"";position:absolute;width:520px;height:520px;left:-200px;bottom:-200px;background:radial-gradient(circle,rgba(182,255,0,.18),transparent 65%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.tag{display:inline-flex;gap:8px;align-items:center;padding:7px 16px;border:1px solid var(--g3);border-radius:999px;font-size:.8rem;color:var(--verde);background:rgba(182,255,0,.06);margin-bottom:24px}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--verde);box-shadow:0 0 12px var(--verde)}
+.hero h1{font-size:clamp(3rem,7vw,5.8rem);font-weight:700;margin-bottom:22px}
+.hero p{color:var(--g4);font-size:1.15rem;max-width:520px;margin-bottom:34px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.stats{display:flex;gap:42px;margin-top:52px}
+.stats b{display:block;font-family:'Oswald';font-size:2.1rem;color:var(--blanco)}
+.stats small{color:var(--g4);font-size:.82rem}
+.hero-art{display:flex;justify-content:center}
+.hero-art svg{width:min(420px,85%);transform:rotate(18deg);filter:drop-shadow(0 40px 60px rgba(255,106,0,.45));animation:flota 6s ease-in-out infinite}
+@keyframes flota{50%{transform:rotate(14deg) translateY(-18px)}}
+/* Marquesina */
+.marq{background:linear-gradient(90deg,var(--naranja),var(--verde));color:#0a0a0b;overflow:hidden;white-space:nowrap;padding:14px 0;transform:rotate(-1deg);margin:-10px -20px 0}
+.marq div{display:inline-block;font-family:'Oswald';font-size:1.2rem;font-weight:600;text-transform:uppercase;animation:marq 28s linear infinite}
+.marq span{margin:0 26px}
+@keyframes marq{to{transform:translateX(-50%)}}
+/* Secciones */
+section{padding:110px 0}
+.cab{text-align:center;max-width:640px;margin:0 auto 60px}
+.cab small{color:var(--naranja);font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:.8rem}
+.cab h2{font-size:clamp(2.2rem,4.5vw,3.6rem);margin:12px 0 14px}
+.cab p{color:var(--g4)}
+/* Productos */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{position:relative;background:linear-gradient(180deg,var(--g2),var(--g1));border:1px solid var(--g3);border-radius:24px;padding:28px 24px 26px;transition:.35s;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0,var(--c),transparent 60%);opacity:.12;transition:.35s}
+.card:hover{transform:translateY(-10px);border-color:var(--c)}
+.card:hover::before{opacity:.28}
+.card>*{position:relative}
+.card .art{height:200px;display:flex;justify-content:center;align-items:center;margin-bottom:18px}
+.card .art svg{height:100%;transform:rotate(18deg);transition:.4s;filter:drop-shadow(0 18px 24px rgba(0,0,0,.6))}
+.card:hover .art svg{transform:rotate(8deg) scale(1.08)}
+.nivel{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+.card h3{font-size:1.75rem;margin:6px 0 8px}
+.card p{color:var(--g4);font-size:.9rem;min-height:68px}
+.barras{margin:16px 0 20px;display:grid;gap:8px;font-size:.75rem;color:var(--g4)}
+.barras div{display:grid;grid-template-columns:68px 1fr;align-items:center;gap:10px}
+.barras em{height:5px;border-radius:5px;background:var(--g3);position:relative;overflow:hidden}
+.barras em::after{content:"";position:absolute;inset:0;width:var(--w);background:var(--c);border-radius:5px}
+.precio{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--g3);padding-top:18px}
+.precio span{font-size:.85rem;color:var(--g4)}
+.precio a{background:var(--c);color:#0a0a0b;font-weight:700;font-size:.85rem;padding:10px 18px;border-radius:999px;transition:.2s}
+.precio a:hover{filter:brightness(1.15);transform:scale(1.05)}
+.badge{position:absolute!important;top:16px;right:16px;background:var(--verde);color:#0a0a0b;font-size:.68rem;font-weight:700;padding:4px 11px;border-radius:999px;text-transform:uppercase;z-index:2}
+/* Por qué */
+.porque{background:var(--g1);border-block:1px solid var(--g3)}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feat div{padding:34px 28px;border-radius:22px;background:var(--negro);border:1px solid var(--g3);transition:.3s}
+.feat div:hover{border-color:var(--naranja);transform:translateY(-6px)}
+.ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:1.5rem;background:linear-gradient(135deg,rgba(255,106,0,.2),rgba(182,255,0,.2));margin-bottom:20px}
+.feat h3{font-size:1.35rem;margin-bottom:10px}
+.feat p{color:var(--g4);font-size:.94rem}
+/* Pasos */
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;counter-reset:p}
+.paso{counter-increment:p;position:relative;padding:36px 30px;border:1px solid var(--g3);border-radius:22px;background:var(--g1)}
+.paso::before{content:"0" counter(p);font-family:'Oswald';font-size:4.2rem;font-weight:700;line-height:1;background:linear-gradient(180deg,var(--naranja),transparent);-webkit-background-clip:text;background-clip:text;color:transparent}
+.paso h3{font-size:1.4rem;margin:8px 0}
+.paso p{color:var(--g4);font-size:.94rem}
+/* Preguntas */
+.faq{max-width:780px;margin:0 auto}
+details{border:1px solid var(--g3);border-radius:16px;padding:20px 24px;margin-bottom:14px;background:var(--g1);transition:.2s}
+details[open]{border-color:var(--verde)}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:"+";color:var(--verde);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--g4);margin-top:12px;font-size:.95rem}
+/* Contacto */
+.contacto{padding-top:40px}
+.box{position:relative;overflow:hidden;border-radius:32px;padding:80px 40px;text-align:center;background:linear-gradient(135deg,#1a0d00,#0e1400);border:1px solid var(--g3)}
+.box::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 0deg,transparent,rgba(255,106,0,.25),transparent 40%,rgba(182,255,0,.2),transparent 80%);animation:gira 14s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+.box>*{position:relative}
+.box h2{font-size:clamp(2.2rem,5vw,4rem);margin-bottom:14px}
+.box p{color:#c4c4cc;max-width:520px;margin:0 auto 32px}
+.datos{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin-top:38px;font-size:.92rem;color:#c4c4cc}
+.datos b{color:var(--verde)}
+footer{padding:40px 0;text-align:center;color:var(--g4);font-size:.85rem;border-top:1px solid var(--g3);margin-top:80px}
+.rev{opacity:0;transform:translateY(30px);transition:.8s}
+.rev.ver{opacity:1;transform:none}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.feat,.pasos{grid-template-columns:1fr}.hero .wrap{grid-template-columns:1fr;text-align:center}.hero p{margin-inline:auto}.cta,.stats{justify-content:center}.hero-art{order:-1}.hero-art svg{width:240px}.hero{padding-top:110px}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.menu a:not(.btn){display:none}section{padding:80px 0}.stats{gap:24px}.box{padding:60px 22px}}
 </style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="paleta" viewBox="0 0 200 340">
+<path d="M100 8C45 8 14 52 14 108c0 48 26 80 56 112l12 38h36l12-38c30-32 56-64 56-112C186 52 155 8 100 8z" fill="var(--c)"/>
+<path d="M100 8C45 8 14 52 14 108c0 48 26 80 56 112l12 38h36l12-38c30-32 56-64 56-112C186 52 155 8 100 8z" fill="none" stroke="#0a0a0b" stroke-opacity=".35" stroke-width="8"/>
+<path d="M100 30C60 30 34 62 34 108c0 38 20 62 46 90h40c26-28 46-52 46-90 0-46-26-78-66-78z" fill="#0a0a0b" fill-opacity=".28"/>
+<g fill="#0a0a0b" fill-opacity=".75">
+<circle cx="100" cy="58" r="6"/><circle cx="72" cy="72" r="6"/><circle cx="128" cy="72" r="6"/><circle cx="100" cy="90" r="6"/><circle cx="58" cy="98" r="6"/><circle cx="142" cy="98" r="6"/><circle cx="80" cy="112" r="6"/><circle cx="120" cy="112" r="6"/><circle cx="100" cy="134" r="6"/><circle cx="68" cy="140" r="6"/><circle cx="132" cy="140" r="6"/><circle cx="84" cy="164" r="6"/><circle cx="116" cy="164" r="6"/>
+</g>
+<rect x="86" y="256" width="28" height="76" rx="10" fill="#1d1d21"/>
+<g stroke="#8b8b95" stroke-width="3"><path d="M86 276l28-8M86 294l28-8M86 312l28-8"/></g>
+<rect x="86" y="326" width="28" height="8" rx="4" fill="var(--c)"/>
+</symbol>
+</defs>
+</svg>
+
 <header>
-<div class="contenedor barra">
-<a href="#inicio" class="marca">
-<svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#ff6a00"/><path d="M20 31s-9-5.5-9-12a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.500-9 12-9 12z" fill="#39ff14"/></svg>
-<div>PADIX <span>PALETAS</span></div>
-</a>
-<nav>
-<a href="#paletas">Paletas</a>
-<a href="#comprar">Cómo comprar</a>
-<a href="#contacto">Contacto</a>
-</nav>
-</div>
+<div class="wrap"><nav>
+<a href="#" class="logo">Padix<span>.</span>Paletas</a>
+<div class="menu">
+<a href="#paletas">Paletas</a><a href="#porque">Por qué Padix</a><a href="#comprar">Cómo comprar</a><a href="#faq">Preguntas</a>
+<a href="#contacto" class="btn btn-p">Consultar</a>
+</div></nav></div>
 </header>
 
 <main>
-<div class="hero" id="inicio">
-<div class="contenedor">
-<h1>Tu próxima <em>paleta</em><br>está en <strong>Padix</strong></h1>
-<p>Paletas de pádel para todos los niveles. Elegí la tuya, consultanos y retirala en Yerba Buena.</p>
-<a href="#paletas" class="boton">Ver paletas</a>
+<div class="hero">
+<div class="wrap">
+<div>
+<div class="tag"><i></i> Yerba Buena, Tucumán</div>
+<h1>Tu próxima <span class="grad">paleta</span> te está esperando</h1>
+<p>Paletas de pádel para cada estilo de juego. Te asesoramos para que elijas la ideal, sin vueltas y con atención personalizada.</p>
+<div class="cta">
+<a href="#paletas" class="btn btn-p">Ver paletas</a>
+<a href="#comprar" class="btn btn-s">Cómo comprar</a>
+</div>
+<div class="stats">
+<div><b>4</b><small>Líneas de juego</small></div>
+<div><b>100%</b><small>Asesoramiento</small></div>
+<div><b>24 h</b><small>Respuesta rápida</small></div>
 </div>
 </div>
+<div class="hero-art" style="--c:#ff6a00"><svg viewBox="0 0 200 340"><use href="#paleta"/></svg></div>
+</div>
+</div>
+
+<div class="marq"><div>
+<span>Control</span>★<span>Potencia</span>★<span>Equilibrio</span>★<span>Asesoramiento personalizado</span>★<span>Yerba Buena</span>★<span>Control</span>★<span>Potencia</span>★<span>Equilibrio</span>★<span>Asesoramiento personalizado</span>★<span>Yerba Buena</span>★
+<span>Control</span>★<span>Potencia</span>★<span>Equilibrio</span>★<span>Asesoramiento personalizado</span>★<span>Yerba Buena</span>★<span>Control</span>★<span>Potencia</span>★<span>Equilibrio</span>★<span>Asesoramiento personalizado</span>★<span>Yerba Buena</span>★
+</div></div>
 
 <section id="paletas">
-<div class="contenedor">
-<h2>Nuestras <i>paletas</i></h2>
-<p class="sub">Cada paleta tiene un estilo de juego. Consultanos precio y stock por mail o Instagram.</p>
-<div class="grilla">
+<div class="wrap">
+<div class="cab rev"><small>Colección</small><h2>Elegí tu <span class="grad">estilo de juego</span></h2><p>Cuatro líneas pensadas para cada nivel. Si dudás, te ayudamos a decidir.</p></div>
+<div class="grid">
 
-<article class="tarjeta">
-<div class="foto"><svg width="90" height="120" viewBox="0 0 60 80" aria-hidden="true"><ellipse cx="30" cy="27" rx="22" ry"=25" fill="none"/><path d="M30 2C14 2 6 14 8 28c2 12 12 20 18 24v14h8V52c6-4 16-12 18-24C54 14 46 2 30 2z" fill="#39ff14"/><circle cx="22" cy="20" r="3" fill="#0d0d0d"/><circle cx="38" cy="20" r="3" fill="#0d0d0d"/><circle cx="30" cy="32" r="3" fill="#0d0d0d"/><circle cx="22" cy="40" r="3" fill="#0d0d0d"/><circle cx="38" cy="40" r="3" fill="#0d0d0d"/></svg></div>
-<span class="etiqueta">Principiantes</span>
-<h3>Paleta Inicio</h3>
-<p>Liviana y fácil de manejar. Ideal para empezar a jugar y tomarle el gusto al pádel.</p>
-<div class="precio">Consultar precio</div>
-<a class="boton chico verde" href="mailto:gonzalogranara@gmail.com?subject=Consulta%20Paleta%20Inicio">Consultar</a>
+<article class="card rev" style="--c:#e4e4ea">
+<div class="art"><svg viewBox="0 0 200 340"><use href="#paleta"/></svg></div>
+<div class="nivel">Principiante</div>
+<h3>Inicio</h3>
+<p>Liviana y fácil de manejar. Ideal para dar tus primeros pasos en la cancha.</p>
+<div class="barras"><div>Control<em style="--w:85%"></em></div><div>Potencia<em style="--w:40%"></em></div><div>Comodidad<em style="--w:90%"></em></div></div>
+<div class="precio"><span>Consultar precio</span><a href="https://ig.me/m/padixtinder">Consultar</a></div>
 </article>
 
-<article class="tarjeta">
-<div class="foto"><svg width="90" height="120" viewBox="0 0 60 80" aria-hidden="true"><path d="M30 2C14 2 6 14 8 28c2 12 12 20 18 24v14h8V52c6-4 16-12 18-24C54 14 46 2 30 2z" fill="#ff6a00"/><circle cx="22" cy="20" r="3" fill="#0d0d0d"/><circle cx="38" cy="20" r="3" fill="#0d0d0d"/><circle cx="30" cy="32" r="3" fill="#0d0d0d"/><circle cx="22" cy="40" r="3" fill="#0d0d0d"/><circle cx="38" cy="40" r="3" fill="#0d0d0d"/></svg></div>
-<span class="etiqueta n">Control</span>
-<h3>Paleta Control</h3>
-<p>Forma redonda y mucha precisión. Para quienes buscan jugar seguro y colocar cada pelota.</p>
-<div class="precio">Consultar precio</div>
-<a class="boton chico" href="mailto:gonzalogranara@gmail.com?subject=Consulta%20Paleta%20Control">Consultar</a>
+<article class="card rev" style="--c:#b6ff00">
+<div class="art"><svg viewBox="0 0 200 340"><use href="#paleta"/></svg></div>
+<div class="nivel">Intermedio</div>
+<h3>Control</h3>
+<p>Forma redonda y gran precisión. Para quienes juegan con cabeza y colocación.</p>
+<div class="barras"><div>Control<em style="--w:95%"></em></div><div>Potencia<em style="--w:55%"></em></div><div>Comodidad<em style="--w:80%"></em></div></div>
+<div class="precio"><span>Consultar precio</span><a href="https://ig.me/m/padixtinder">Consultar</a></div>
 </article>
 
-<article class="tarjeta">
-<div class="foto"><svg width="90" height="120" viewBox="0 0 60 80" aria-hidden="true"><path d="M30 2C14 2 6 14 8 28c2 12 12 20 18 24v14h8V52c6-4 16-12 18-24C54 14 46 2 30 2z" fill="#bdbdbd"/><circle cx="22" cy="20" r="3" fill="#0d0d0d"/><circle cx="38" cy="20" r="3" fill="#0d0d0d"/><circle cx="30" cy="32" r="3" fill="#0d0d0d"/><circle cx="22" cy="40" r="3" fill="#0d0d0d"/><circle cx="38" cy="40" r="3" fill="#0d0d0d"/></svg></div>
-<span class="etiqueta">Equilibrio</span>
-<h3>Paleta Equilibrio</h3>
-<p>Un punto medio entre control y potencia. Una paleta para todo tipo de partidos.</p>
-<div class="precio">Consultar precio</div>
-<a class="boton chico verde" href="mailto:gonzalogranara@gmail.com?subject=Consulta%20Paleta%20Equilibrio">Consultar</a>
+<article class="card rev" style="--c:#ff9a00">
+<span class="badge">Más elegida</span>
+<div class="art"><svg viewBox="0 0 200 340"><use href="#paleta"/></svg></div>
+<div class="nivel">Todo terreno</div>
+<h3>Equilibrio</h3>
+<p>Forma de lágrima: lo mejor de la defensa y del ataque en una sola paleta.</p>
+<div class="barras"><div>Control<em style="--w:78%"></em></div><div>Potencia<em style="--w:78%"></em></div><div>Comodidad<em style="--w:78%"></em></div></div>
+<div class="precio"><span>Consultar precio</span><a href="https://ig.me/m/padixtinder">Consultar</a></div>
 </article>
 
-<article class="tarjeta">
-<div class="foto"><svg width="90" height="120" viewBox="0 0 60 80" aria-hidden="true"><path d="M30 2C20 2 10 14 12 28c2 12 12 20 18 24l0 0c6-4 16-12 18-24C50 14 40 2 30 2z" fill="#ff6a00"/><path d="M26 52h8v14h-8z" fill="#ff6a00"/><circle cx="30" cy="18" r="3" fill="#0d0d0d"/><circle cx="24" cy="30" r="3" fill="#0d0d0d"/><circle cx="36" cy="30" r="3" fill="#0d0d0d"/><circle cx="30" cy="42" r="3" fill="#0d0d0d"/></svg></div>
-<span class="etiqueta n">Potencia</span>
-<h3>Paleta Potencia</h3>
-<p>Forma de diamante, con el peso en la punta. Para rematar fuerte y definir los puntos.</p>
-<div class="precio">Consultar precio</div>
-<a class="boton chico" href="mailto:gonzalogranara@gmail.com?subject=Consulta%20Paleta%20Potencia">Consultar</a>
+<article class="card rev" style="--c:#ff4d00">
+<div class="art"><svg viewBox="0 0 200 340"><use href="#paleta"/></svg></div>
+<div class="nivel">Avanzado</div>
+<h3>Potencia</h3>
+<p>Forma de diamante con punto dulce alto. Para rematar fuerte y definir puntos.</p>
+<div class="barras"><div>Control<em style="--w:55%"></em></div><div>Potencia<em style="--w:97%"></em></div><div>Comodidad<em style="--w:60%"></em></div></div>
+<div class="precio"><span>Consultar precio</span><a href="https://ig.me/m/padixtinder">Consultar</a></div>
 </article>
 
 </div>
 </div>
 </section>
 
-<section class="ventajas">
-<div class="contenedor grilla">
-<div class="ventaja"><div class="num">1</div><h3>Para todos los niveles</h3><p>Desde la primera paleta hasta la de competencia.</p></div>
-<div class="ventaja"><div class="num">2</div><h3>Te asesoramos</h3><p>Te ayudamos a elegir la que mejor va con tu juego.</p></div>
-<div class="ventaja"><div class="num">3</div><h3>Retiro en Yerba Buena</h3><p>San Javier 2400, coordinando antes con nosotros.</p></div>
+<section id="porque" class="porque">
+<div class="wrap">
+<div class="cab rev"><small>Por qué Padix</small><h2>Jugás mejor <span class="grad">con la paleta justa</span></h2><p>No vendemos solo paletas: te ayudamos a elegir la que va con vos.</p></div>
+<div class="feat">
+<div class="rev"><div class="ico">🎯</div><h3>Asesoramiento real</h3><p>Te preguntamos cómo jugás, tu nivel y qué buscás, y te recomendamos la paleta ideal.</p></div>
+<div class="rev"><div class="ico">🤝</div><h3>Trato cercano</h3><p>Atención personal, de jugadores para jugadores. Sin apuros ni compromiso.</p></div>
+<div class="rev"><div class="ico">📍</div><h3>En Yerba Buena</h3><p>Coordinamos para que la veas y la pruebes en persona, o te la llevamos.</p></div>
+</div>
 </div>
 </section>
 
 <section id="comprar">
-<div class="contenedor">
-<h2>Cómo <i>comprar</i></h2>
-<p class="sub">Es fácil y rápido, en tres pasos.</p>
+<div class="wrap">
+<div class="cab rev"><small>Cómo comprar</small><h2>Tres pasos, <span class="grad">listo</span></h2><p>Comprar tu paleta es simple y rápido.</p></div>
 <div class="pasos">
-<div class="paso"><h3>Elegí tu paleta</h3><p>Mirá los modelos y quedate con el que más te guste.</p></div>
-<div class="paso"><h3>Escribinos</h3><p>Mandanos un mail o un mensaje por Instagram para confirmar precio y stock.</p></div>
-<div class="paso"><h3>Retirala</h3><p>Coordinamos el pago y el retiro en Yerba Buena.</p></div>
+<div class="paso rev"><h3>Elegí tu paleta</h3><p>Mirá las líneas y quedate con la que mejor se adapte a tu juego.</p></div>
+<div class="paso rev"><h3>Escribinos</h3><p>Mandanos un mensaje por Instagram y te confirmamos precio y disponibilidad.</p></div>
+<div class="paso rev"><h3>Retirá o recibila</h3><p>Coordinamos el pago y la entrega en Yerba Buena. ¡A jugar!</p></div>
 </div>
 </div>
 </section>
 
-<section class="contacto" id="contacto">
-<div class="contenedor">
-<h2>¿Tenés <i>dudas</i>?</h2>
-<p class="sub">Escribinos y te respondemos a la brevedad.</p>
-<div class="datos">
-<a class="boton" href="mailto:gonzalogranara@gmail.com">gonzalogranara@gmail.com</a>
-<a class="boton verde" href="https://www.instagram.com/padixtinder" target="_blank" rel="noopener">Instagram @padixtinder</a>
+<section id="faq" style="padding-top:20px">
+<div class="wrap">
+<div class="cab rev"><small>Preguntas</small><h2>Dudas <span class="grad">frecuentes</span></h2></div>
+<div class="faq">
+<details class="rev"><summary>¿Cómo sé qué paleta me conviene?</summary><p>Escribinos contándonos hace cuánto jugás y qué te gusta hacer en la cancha. Te recomendamos una según tu nivel y tu estilo.</p></details>
+<details class="rev"><summary>¿Puedo ver la paleta antes de comprar?</summary><p>Sí, podemos coordinar para que la veas en persona en Yerba Buena.</p></details>
+<details class="rev"><summary>¿Cuáles son los precios?</summary><p>Los precios dependen del modelo y la disponibilidad. Consultanos y te pasamos el valor actualizado.</p></details>
+<details class="rev"><summary>¿Cómo se paga?</summary><p>Lo coordinamos con vos por mensaje al confirmar tu compra.</p></details>
 </div>
-<p class="sub" style="margin-top:26px">📍 Yerba Buena, San Javier 2400</p>
+</div>
+</section>
+
+<section id="contacto" class="contacto">
+<div class="wrap">
+<div class="box rev">
+<h2>Encontrá tu <span class="grad">paleta ideal</span></h2>
+<p>Escribinos y te asesoramos sin compromiso. Respondemos rápido.</p>
+<a href="https://ig.me/m/padixtinder" class="btn btn-p">Escribir por Instagram</a>
+<div class="datos">
+<span><b>Instagram</b> · <a href="https://instagram.com/padixtinder">@padixtinder</a></span>
+<span><b>Dirección</b> · Yerba Buena, San Javier 2400</span>
+</div>
+</div>
 </div>
 </section>
 </main>
 
-<footer>
-<div class="contenedor">© 2026 Padix · Venta de paletas de pádel</div>
-</footer>
+<footer><div class="wrap">© 2026 Padix Paletas · Yerba Buena, Tucumán</div></footer>
 
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('ver');io.unobserve(x.target)}}),{threshold:.12});
+document.querySelectorAll('.rev').forEach((el,i)=>{el.style.transitionDelay=(i%4)*90+'ms';io.observe(el)});
+</script>
 </body>
 </html>
