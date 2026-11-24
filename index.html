@@ -2,73 +2,167 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Padix - Paletas de pádel en Yerba Buena</title>
-<meta name="description" content="Padix: venta de paletas de pádel en Yerba Buena, San Javier 2400, Tucumán.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Padix Paletas | Venta de paletas de pádel en Yerba Buena</title>
+<meta name="description" content="Paletas de pádel para todos los niveles. Retiro en Yerba Buena, San Javier 2400.">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: Arial, Helvetica, sans-serif; color: #1a1a1a; background: #ffffff; line-height: 1.6; }
-  header { background: #111111; color: #ffffff; padding: 60px 20px; text-align: center; }
-  header h1 { font-size: 3rem; color: #ff7a00; letter-spacing: 2px; }
-  header p { font-size: 1.2rem; margin-top: 10px; color: #dddddd; }
-  .btn { display: inline-block; margin-top: 25px; background: #ff7a00; color: #111111; padding: 12px 28px; text-decoration: none; font-weight: bold; border-radius: 6px; }
-  .btn:hover { background: #e06a00; }
-  section { padding: 50px 20px; max-width: 900px; margin: 0 auto; }
-  section h2 { font-size: 2rem; margin-bottom: 15px; color: #111111; }
-  section h2 span { color: #ff7a00; }
-  .gris { background: #f2f2f2; max-width: none; }
-  .gris > div { max-width: 900px; margin: 0 auto; }
-  .tarjetas { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
-  .tarjeta { flex: 1 1 250px; background: #ffffff; border-left: 5px solid #ff7a00; padding: 20px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
-  .tarjeta h3 { margin-bottom: 8px; color: #111111; }
-  .info p { margin-bottom: 10px; font-size: 1.1rem; }
-  .info strong { color: #ff7a00; }
-  footer { background: #111111; color: #cccccc; text-align: center; padding: 25px 20px; }
-  footer a { color: #ff7a00; text-decoration: none; }
+:root{--naranja:#ff6a00;--verde:#39ff14;--negro:#0d0d0d;--gris-osc:#1a1a1a;--gris:#2b2b2b;--gris-cl:#bdbdbd;--blanco:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--negro);color:var(--blanco);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.contenedor{max-width:1100px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;background:rgba(13,13,13,.95);border-bottom:1px solid var(--gris);z-index:10}
+.barra{display:flex;align-items:center;justify-content:space-between;height:64px}
+.marca{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.3rem;letter-spacing:1px}
+.marca span{color:var(--naranja)}
+.marca b{color:var(--verde)}
+nav a{margin-left:20px;color:var(--gris-cl);font-size:.95rem}
+nav a:hover{color:var(--verde)}
+.hero{padding:80px 0 70px;text-align:center;background:radial-gradient(circle at 50% 0,#2a1500 0,var(--negro) 65%)}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.1;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--naranja)}
+.hero h1 strong{color:var(--verde)}
+.hero p{max-width:600px;margin:0 auto 30px;color:var(--gris-cl);font-size:1.1rem}
+.boton{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:700;border:2px solid var(--naranja);background:var(--naranja);color:var(--negro);transition:.2s}
+.boton:hover{background:transparent;color:var(--naranja)}
+.boton.verde{background:var(--verde);border-color:var(--verde)}
+.boton.verde:hover{background:transparent;color:var(--verde)}
+.boton.chico{padding:10px 20px;font-size:.9rem}
+section{padding:70px 0}
+h2{font-size:2rem;margin-bottom:10px}
+h2 i{font-style:normal;color:var(--verde)}
+.sub{color:var(--gris-cl);margin-bottom:36px}
+.grilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.tarjeta{background:var(--gris-osc);border:1px solid var(--gris);border-radius:18px;padding:22px;display:flex;flex-direction:column;transition:.2s}
+.tarjeta:hover{border-color:var(--naranja);transform:translateY(-4px)}
+.foto{height:170px;border-radius:12px;background:linear-gradient(135deg,var(--gris),var(--negro));display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.etiqueta{display:inline-block;align-self:flex-start;font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--verde);color:var(--negro);margin-bottom:10px}
+.etiqueta.n{background:var(--naranja)}
+.tarjeta h3{font-size:1.2rem;margin-bottom:6px}
+.tarjeta p{color:var(--gris-cl);font-size:.93rem;flex:1;margin-bottom:16px}
+.precio{font-weight:800;color:var(--naranja);margin-bottom:14px}
+.ventajas{background:var(--gris-osc);border-top:1px solid var(--gris);border-bottom:1px solid var(--gris)}
+.ventaja{text-align:center;padding:10px}
+.ventaja .num{font-size:2.4rem;font-weight:900;color:var(--verde)}
+.ventaja h3{margin:4px 0}
+.ventaja p{color:var(--gris-cl);font-size:.93rem}
+.pasos{counter-reset:p;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.paso{counter-increment:p;background:var(--gris-osc);border-radius:18px;padding:24px;border-left:5px solid var(--naranja)}
+.paso::before{content:counter(p);display:block;font-size:2rem;font-weight:900;color:var(--naranja)}
+.paso p{color:var(--gris-cl);font-size:.93rem}
+.contacto{text-align:center;background:linear-gradient(180deg,var(--negro),#1a0d00)}
+.contacto .datos{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:26px}
+footer{padding:26px 0;text-align:center;color:var(--gris-cl);font-size:.85rem;border-top:1px solid var(--gris)}
+@media(max-width:600px){nav a{margin-left:12px;font-size:.85rem}}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>PADIX</h1>
-  <p>Paletas de pádel para jugar mejor</p>
-  <a class="btn" href="https://instagram.com/padixtucuman" target="_blank">Seguinos en Instagram</a>
+<div class="contenedor barra">
+<a href="#inicio" class="marca">
+<svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#ff6a00"/><path d="M20 31s-9-5.5-9-12a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6.500-9 12-9 12z" fill="#39ff14"/></svg>
+<div>PADIX <span>PALETAS</span></div>
+</a>
+<nav>
+<a href="#paletas">Paletas</a>
+<a href="#comprar">Cómo comprar</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</div>
 </header>
 
-<section>
-  <h2>Quiénes <span>somos</span></h2>
-  <p>En Padix vendemos paletas de pádel para todos los niveles, desde quienes arrancan hasta jugadores avanzados. Te ayudamos a elegir la paleta que mejor se adapta a tu juego y a tu estilo.</p>
+<main>
+<div class="hero" id="inicio">
+<div class="contenedor">
+<h1>Tu próxima <em>paleta</em><br>está en <strong>Padix</strong></h1>
+<p>Paletas de pádel para todos los niveles. Elegí la tuya, consultanos y retirala en Yerba Buena.</p>
+<a href="#paletas" class="boton">Ver paletas</a>
+</div>
+</div>
+
+<section id="paletas">
+<div class="contenedor">
+<h2>Nuestras <i>paletas</i></h2>
+<p class="sub">Cada paleta tiene un estilo de juego. Consultanos precio y stock por mail o Instagram.</p>
+<div class="grilla">
+
+<article class="tarjeta">
+<div class="foto"><svg width="90" height="120" viewBox="0 0 60 80" aria-hidden="true"><ellipse cx="30" cy="27" rx="22" ry"=25" fill="none"/><path d="M30 2C14 2 6 14 8 28c2 12 12 20 18 24v14h8V52c6-4 16-12 18-24C54 14 46 2 30 2z" fill="#39ff14"/><circle cx="22" cy="20" r="3" fill="#0d0d0d"/><circle cx="38" cy="20" r="3" fill="#0d0d0d"/><circle cx="30" cy="32" r="3" fill="#0d0d0d"/><circle cx="22" cy="40" r="3" fill="#0d0d0d"/><circle cx="38" cy="40" r="3" fill="#0d0d0d"/></svg></div>
+<span class="etiqueta">Principiantes</span>
+<h3>Paleta Inicio</h3>
+<p>Liviana y fácil de manejar. Ideal para empezar a jugar y tomarle el gusto al pádel.</p>
+<div class="precio">Consultar precio</div>
+<a class="boton chico verde" href="mailto:gonzalogranara@gmail.com?subject=Consulta%20Paleta%20Inicio">Consultar</a>
+</article>
+
+<article class="tarjeta">
+<div class="foto"><svg width="90" height="120" viewBox="0 0 60 80" aria-hidden="true"><path d="M30 2C14 2 6 14 8 28c2 12 12 20 18 24v14h8V52c6-4 16-12 18-24C54 14 46 2 30 2z" fill="#ff6a00"/><circle cx="22" cy="20" r="3" fill="#0d0d0d"/><circle cx="38" cy="20" r="3" fill="#0d0d0d"/><circle cx="30" cy="32" r="3" fill="#0d0d0d"/><circle cx="22" cy="40" r="3" fill="#0d0d0d"/><circle cx="38" cy="40" r="3" fill="#0d0d0d"/></svg></div>
+<span class="etiqueta n">Control</span>
+<h3>Paleta Control</h3>
+<p>Forma redonda y mucha precisión. Para quienes buscan jugar seguro y colocar cada pelota.</p>
+<div class="precio">Consultar precio</div>
+<a class="boton chico" href="mailto:gonzalogranara@gmail.com?subject=Consulta%20Paleta%20Control">Consultar</a>
+</article>
+
+<article class="tarjeta">
+<div class="foto"><svg width="90" height="120" viewBox="0 0 60 80" aria-hidden="true"><path d="M30 2C14 2 6 14 8 28c2 12 12 20 18 24v14h8V52c6-4 16-12 18-24C54 14 46 2 30 2z" fill="#bdbdbd"/><circle cx="22" cy="20" r="3" fill="#0d0d0d"/><circle cx="38" cy="20" r="3" fill="#0d0d0d"/><circle cx="30" cy="32" r="3" fill="#0d0d0d"/><circle cx="22" cy="40" r="3" fill="#0d0d0d"/><circle cx="38" cy="40" r="3" fill="#0d0d0d"/></svg></div>
+<span class="etiqueta">Equilibrio</span>
+<h3>Paleta Equilibrio</h3>
+<p>Un punto medio entre control y potencia. Una paleta para todo tipo de partidos.</p>
+<div class="precio">Consultar precio</div>
+<a class="boton chico verde" href="mailto:gonzalogranara@gmail.com?subject=Consulta%20Paleta%20Equilibrio">Consultar</a>
+</article>
+
+<article class="tarjeta">
+<div class="foto"><svg width="90" height="120" viewBox="0 0 60 80" aria-hidden="true"><path d="M30 2C20 2 10 14 12 28c2 12 12 20 18 24l0 0c6-4 16-12 18-24C50 14 40 2 30 2z" fill="#ff6a00"/><path d="M26 52h8v14h-8z" fill="#ff6a00"/><circle cx="30" cy="18" r="3" fill="#0d0d0d"/><circle cx="24" cy="30" r="3" fill="#0d0d0d"/><circle cx="36" cy="30" r="3" fill="#0d0d0d"/><circle cx="30" cy="42" r="3" fill="#0d0d0d"/></svg></div>
+<span class="etiqueta n">Potencia</span>
+<h3>Paleta Potencia</h3>
+<p>Forma de diamante, con el peso en la punta. Para rematar fuerte y definir los puntos.</p>
+<div class="precio">Consultar precio</div>
+<a class="boton chico" href="mailto:gonzalogranara@gmail.com?subject=Consulta%20Paleta%20Potencia">Consultar</a>
+</article>
+
+</div>
+</div>
 </section>
 
-<section class="gris">
-  <div>
-    <h2>Lo que <span>ofrecemos</span></h2>
-    <div class="tarjetas">
-      <div class="tarjeta">
-        <h3>Paletas</h3>
-        <p>Una variedad de paletas de pádel de distintas marcas, formas y pesos.</p>
-      </div>
-      <div class="tarjeta">
-        <h3>Asesoramiento</h3>
-        <p>Te orientamos para encontrar la paleta ideal según tu nivel y tu forma de jugar.</p>
-      </div>
-    </div>
-  </div>
+<section class="ventajas">
+<div class="contenedor grilla">
+<div class="ventaja"><div class="num">1</div><h3>Para todos los niveles</h3><p>Desde la primera paleta hasta la de competencia.</p></div>
+<div class="ventaja"><div class="num">2</div><h3>Te asesoramos</h3><p>Te ayudamos a elegir la que mejor va con tu juego.</p></div>
+<div class="ventaja"><div class="num">3</div><h3>Retiro en Yerba Buena</h3><p>San Javier 2400, coordinando antes con nosotros.</p></div>
+</div>
 </section>
 
-<section>
-  <h2>Dónde <span>estamos</span></h2>
-  <div class="info">
-    <p><strong>Dirección:</strong> Yerba Buena, San Javier 2400</p>
-    <p><strong>Horario:</strong> de 9 a 19 hs</p>
-    <p><strong>Teléfono / WhatsApp:</strong> 3814485490</p>
-    <p><strong>Instagram:</strong> <a href="https://instagram.com/padixtucuman" target="_blank">@padixtucuman</a></p>
-  </div>
+<section id="comprar">
+<div class="contenedor">
+<h2>Cómo <i>comprar</i></h2>
+<p class="sub">Es fácil y rápido, en tres pasos.</p>
+<div class="pasos">
+<div class="paso"><h3>Elegí tu paleta</h3><p>Mirá los modelos y quedate con el que más te guste.</p></div>
+<div class="paso"><h3>Escribinos</h3><p>Mandanos un mail o un mensaje por Instagram para confirmar precio y stock.</p></div>
+<div class="paso"><h3>Retirala</h3><p>Coordinamos el pago y el retiro en Yerba Buena.</p></div>
+</div>
+</div>
 </section>
+
+<section class="contacto" id="contacto">
+<div class="contenedor">
+<h2>¿Tenés <i>dudas</i>?</h2>
+<p class="sub">Escribinos y te respondemos a la brevedad.</p>
+<div class="datos">
+<a class="boton" href="mailto:gonzalogranara@gmail.com">gonzalogranara@gmail.com</a>
+<a class="boton verde" href="https://www.instagram.com/padixtinder" target="_blank" rel="noopener">Instagram @padixtinder</a>
+</div>
+<p class="sub" style="margin-top:26px">📍 Yerba Buena, San Javier 2400</p>
+</div>
+</section>
+</main>
 
 <footer>
-  <p>© Padix - Yerba Buena, Tucumán</p>
-  <p><a href="https://instagram.com/padixtucuman" target="_blank">@padixtucuman</a></p>
+<div class="contenedor">© 2026 Padix · Venta de paletas de pádel</div>
 </footer>
 
 </body>
